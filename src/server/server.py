@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
 import csv
+import sys
+import time
+import subprocess
 
 # Constant declarations
 PROGRAM_TABLE_DATA = "programs.csv"
@@ -8,6 +11,8 @@ PROGRAM_TABLE_DECL = "#PROGRAMS"
 INDEX_HTML_TEMPLATE = "templates/index.html"
 INDEX_HTML = "index.html"
 URL_DELIMITERS = ('(', ')')
+GIT_PULL_UP_TO_DATE_MSG = "Already up to date.\n"
+DAEMON_SLEEP_INTERVAL = 60
 
 
 # Parse link data from given element and return a pair containing a name and url
@@ -67,5 +72,17 @@ def write_html(html):
     open(INDEX_HTML, 'w').write(data)
 
 
-html = create_program_table_html()
-write_html(html)
+# Check if daemon was requested
+if len(sys.argv) == 2 and sys.argv[1] == "--daemon":
+    while True:
+        pull = subprocess.check_output("git pull origin master", shell=True)
+
+        if pull.decode("UTF-8") != GIT_PULL_UP_TO_DATE_MSG:
+            html = create_program_table_html()
+            write_html(html)
+
+        time.sleep(DAEMON_SLEEP_INTERVAL)
+
+else:
+    html = create_program_table_html()
+    write_html(html)
