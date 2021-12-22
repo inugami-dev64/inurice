@@ -1,0 +1,25 @@
+Program name, Purpose, Installation source
+alsa-utils, Allows to set sound levels and other stuff, pacman
+dmenu, Simple menu for searching executing programs in WM, sadblog's git(https://git.sadblog.xyz/dmenu)
+dwm, Base window manager for Inurice, sadblog's git(https://git.sadblog.xyz/dwm)
+feh, Image viewer and wallpaper setting utility, pacman
+ffmpeg, Record and convert video or audio files from command line, pacman
+git, Version control software needed for installation, pacman
+kpcli, Commandline tool for managing keepass databases, AUR
+mpv, Media player, pacman
+nvim, Text editor, pacman
+pulseaudio, Contriversial sound server that should just work, pacman
+st, Terminal emulator, sadblog's git(https://git.sadblog.xyz/st)
+surf, Minimalist GUI browser for small tasks, suckless's git(https://git.suckless.org/surf)
+tabbed, Allows tabs for multiple programs using xorg, suckless's git(https://git.suckless.org/tabbed)
+texlive-most, Metapackage for LaTeX that contains all LaTeX packages available, pacman
+thunderbird, Easy to use email client, pacman
+ungoogled-chromium, Main web-browser to be used, OpenSUSE repo(https://download.opensuse.org/repositories/home:/ungoogled_chromium/Arch/x86_64/)
+vifm, File manager with vim keybindings, pacman
+xcompmgr, Allows transparency, pacman
+xorg-setxkbmap, Allows to toggle keyboard layouts between English (US) and Russian, pacman
+xorg-xrandr, Allows to change screen resolution and refresh rate, pacman
+xorg-xsetroot, Allows to set root window parameters for time and date, pacman
+yt-dlp, Can be used to scrape videos from the internet, pacman
+zathura, PDF viewer that automatically changes the view when pdf is modified, pacman
+zathura-pdf-mupdf, Allows mupdf compatibility for zathura-pdf, pacman

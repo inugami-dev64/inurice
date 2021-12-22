@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <base href="..">
+        <title>Inurice desktop environment</title>
+        <link rel="stylesheet" href="style.css"</link>
+    </head>
+
+    <body>
+
+        <!-- Main section of content for this website -->
+        <main>
+            <h1>Inurice</h1>
+            <h2><a href="https://github.com/inugami-dev64">Inugami's</a> post installation rice scripts</h2>
+            <img src="res/inuyasha.png" alt="Inuyasha">
+            <p>
+                If you would like to get started with using Linux as your daily driver you
+                would probably install some normie "friendly" distro such as Manjaro or Ubuntu.
+                However the problem with such distros is that they come preinstalled with so many
+                different programs, that supposedly "help to make Linux Desktop easier to use". However
+                it is usually not the case because all these programs do, is just add extra complexity.
+                This kind of complexity usually makes it very difficult to troubleshoot if some problems
+                will inevitably arise with your desktop environment or distro. One good example 
+                of this bloated madness is the use of multiple package managers, where each package 
+                manager works independently from each other while usually doing more harm then good, since 
+                most packages would already exist in the original package repository anyways!
+            </p>
+
+            <p>
+                To make Linux Desktop less painful to use, I have made an easy to use bootstrap script
+                that will install my custom dwm build, dmenu and st as for the base WM system. This script
+                assumes that Arch or its derivative is used.
+            </p>
+
+            <h3>Getting started</h3>
+            <h4>Prerequisites</h4>
+            <p>Make sure that you have successfully installed your graphics drivers and xorg. Also make sure
+               that <code>curl</code> or <code>wget</code> is installed.
+
+            <h4>Running the script</h4>
+            <p>In order to get started, just fetch the bootstrap script with curl or wget and run it.</p>
+            <pre>
+                <code>
+                    $ curl -LO https://inurice.de/inurice.sh</code>
+                    $ chmod a+x inurice.sh
+                    $ ./inurice.sh
+                </code>
+            </pre>
+
+            <h3>Programs that will be installed</h3>
+            <button id="ToggleProgramTable" onclick="g_ProgramTable.Toggle()">Show the program table</button>
+            <table id="ProgramTable">
+                #PROGRAMS
+            </table>
+
+            <!-- Contact information -->
+            <div class="contact">
+                <h4>Contact</h4>
+                <p>Email: karl@karlott.xyz</p>
+                <p>Github: <a href="https://github.com/inugami-dev64/inurice">mirror</a></p>
+                <p>Git: <a href="https://git.sadblog.xyz/inurice">repo</a></p>
+                <script src="src/client/VisualEffects.js"></script>
+            </div>
+        </main>
+    </body>
+</html>

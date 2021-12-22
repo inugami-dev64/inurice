@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!--<base href="..">-->
+        <title>Inurice desktop environment</title>
+        <link rel="stylesheet" href="style.css"</link>
+    </head>
+
+    <body>
+
+        <!-- Main section of content for this website -->
+        <main>
+            <h1>Inurice</h1>
+            <h2><a href="https://github.com/inugami-dev64">Inugami's</a> post installation rice scripts</h2>
+            <img src="res/inuyasha.png" alt="Inuyasha">
+            <p>
+                If you would like to get started with using Linux as your daily driver you
+                would probably install some normie "friendly" distro such as Manjaro or Ubuntu.
+                However the problem with such distros is that they come preinstalled with so many
+                different programs, that supposedly "help to make Linux Desktop easier to use". However
+                it is usually not the case because all these programs do, is just add extra complexity.
+                This kind of complexity usually makes it very difficult to troubleshoot if some problems
+                will inevitably arise with your desktop environment or distro. One good example 
+                of this bloated madness is the use of multiple package managers, where each package 
+                manager works independently from each other while usually doing more harm then good, since 
+                most packages would already exist in the original package repository anyways!
+            </p>
+
+            <p>
+                To make Linux Desktop less painful to use, I have made an easy to use bootstrap script
+                that will install my custom dwm build, dmenu and st as for the base WM system. This script
+                assumes that Arch or its derivative is used.
+            </p>
+
+            <h3>Getting started</h3>
+            <h4>Prerequisites</h4>
+            <p>Make sure that you have successfully installed your graphics drivers and xorg. Also make sure
+               that <code>curl</code> or <code>wget</code> is installed.
+
+            <h4>Running the script</h4>
+            <p>In order to get started, just fetch the bootstrap script with curl or wget and run it.</p>
+            <pre>
+                <code>
+                    $ curl -LO https://inurice.de/inurice.sh</code>
+                    $ chmod a+x inurice.sh
+                    $ ./inurice.sh
+                </code>
+            </pre>
+
+            <h3>Programs that will be installed</h3>
+            <button id="ToggleProgramTable" onclick="g_ProgramTable.Toggle()">Show the program table</button>
+            <table id="ProgramTable">
+                <tr>
+<th>Program name</th>
+<th> Purpose</th>
+<th> Installation source</th>
+</tr>
+<tr>
+<td>alsa-utils</td>
+<td> Allows to set sound levels and other stuff</td>
+<td> pacman</td>
+</tr>
+<tr>
+<td>dmenu</td>
+<td> Simple menu for searching executing programs in WM</td>
+<td><a href="https://git.sadblog.xyz/dmenu"> sadblog's git</a></td>
+</tr>
+<tr>
+<td>dwm</td>
+<td> Base window manager for Inurice</td>
+<td><a href="https://git.sadblog.xyz/dwm"> sadblog's git</a></td>
+</tr>
+<tr>
+<td>feh</td>
+<td> Image viewer and wallpaper setting utility</td>
+<td> pacman</td>
+</tr>
+<tr>
+<td>ffmpeg</td>
+<td> Record and convert video or audio files from command line</td>
+<td> pacman</td>
+</tr>
+<tr>
+<td>git</td>
+<td> Version control software needed for installation</td>
+<td> pacman</td>
+</tr>
+<tr>
+<td>kpcli</td>
+<td> Commandline tool for managing keepass databases</td>
+<td> AUR</td>
+</tr>
+<tr>
+<td>mpv</td>
+<td> Media player</td>
+<td> pacman</td>
+</tr>
+<tr>
+<td>nvim</td>
+<td> Text editor</td>
+<td> pacman</td>
+</tr>
+<tr>
+<td>pulseaudio</td>
+<td> Contriversial sound server that should just work</td>
+<td> pacman</td>
+</tr>
+<tr>
+<td>st</td>
+<td> Terminal emulator</td>
+<td><a href="https://git.sadblog.xyz/st"> sadblog's git</a></td>
+</tr>
+<tr>
+<td>surf</td>
+<td> Minimalist GUI browser for small tasks</td>
+<td><a href="https://git.suckless.org/surf"> suckless's git</a></td>
+</tr>
+<tr>
+<td>tabbed</td>
+<td> Allows tabs for multiple programs using xorg</td>
+<td><a href="https://git.suckless.org/tabbed"> suckless's git</a></td>
+</tr>
+<tr>
+<td>texlive-most</td>
+<td> Metapackage for LaTeX that contains all LaTeX packages available</td>
+<td> pacman</td>
+</tr>
+<tr>
+<td>thunderbird</td>
+<td> Easy to use email client</td>
+<td> pacman</td>
+</tr>
+<tr>
+<td>ungoogled-chromium</td>
+<td> Main web-browser to be used</td>
+<td><a href="https://download.opensuse.org/repositories/home:/ungoogled_chromium/Arch/x86_64/"> OpenSUSE repo</a></td>
+</tr>
+<tr>
+<td>vifm</td>
+<td> File manager with vim keybindings</td>
+<td> pacman</td>
+</tr>
+<tr>
+<td>xcompmgr</td>
+<td> Allows transparency</td>
+<td> pacman</td>
+</tr>
+<tr>
+<td>xorg-setxkbmap</td>
+<td> Allows to toggle keyboard layouts between English (US) and Russian</td>
+<td> pacman</td>
+</tr>
+<tr>
+<td>xorg-xrandr</td>
+<td> Allows to change screen resolution and refresh rate</td>
+<td> pacman</td>
+</tr>
+<tr>
+<td>xorg-xsetroot</td>
+<td> Allows to set root window parameters for time and date</td>
+<td> pacman</td>
+</tr>
+<tr>
+<td>yt-dlp</td>
+<td> Can be used to scrape videos from the internet</td>
+<td> pacman</td>
+</tr>
+<tr>
+<td>zathura</td>
+<td> PDF viewer that automatically changes the view when pdf is modified</td>
+<td> pacman</td>
+</tr>
+<tr>
+<td>zathura-pdf-mupdf</td>
+<td> Allows mupdf compatibility for zathura-pdf</td>
+<td> pacman</td>
+</tr>
+
+            </table>
+
+            <!-- Contact information -->
+            <div class="contact">
+                <h4>Contact</h4>
+                <p>Email: karl@karlott.xyz</p>
+                <p>Github: <a href="https://github.com/inugami-dev64/inurice">mirror</a></p>
+                <p>Git: <a href="https://git.sadblog.xyz/inurice">repo</a></p>
+                <script src="src/client/VisualEffects.js"></script>
+            </div>
+        </main>
+    </body>
+</html>
