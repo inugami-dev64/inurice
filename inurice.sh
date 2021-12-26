@@ -90,7 +90,7 @@ clone_and_build_dwm() {
     [ -z "$PASSWORD_DB" ] && PASSWORD_DB="~/Document/passwords.kdbx"
 
     # Build and install dwm
-    make PASSWORD_DB=${PASSWORD_DB} -j$CPUS
+    make "PASSWORD_DB=${PASSWORD_DB}" -j$CPUS
     sudo make install
     cd ..
 }
