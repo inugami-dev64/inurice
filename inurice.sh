@@ -25,6 +25,7 @@ PACMAN_PROGRAMS="alsa-utils \
                  xfce4-screenshooter \
                  xcompmgr \
                  xorg-xinit \
+                 xorg-server \
                  xorg-setxkbmap \
                  xorg-xrandr \
                  xorg-xsetroot \
