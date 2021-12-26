@@ -80,8 +80,8 @@ clone_and_build() {
 # Argument $2 specifies the local clone directory
 clone_and_makepkg() {
     printf "${GREEN}Cloning and makepkg $2...${NO_COLOR}\n"
-    cd $2
     git clone $1 $2
+    cd $2
     makepkg -si
     cd ..
 }
