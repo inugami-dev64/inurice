@@ -16,11 +16,13 @@ PACMAN_PROGRAMS="alsa-utils \
                  neofetch \
                  neovim \
                  pulseaudio \
+                 python-pip \
                  texlive-most \
                  thunderbird \
                  vifm \
                  webkit2gtk \
                  xcompmgr \
+                 xorg-xinit \
                  xorg-setxkbmap \
                  xorg-xrandr \
                  xorg-xsetroot \
@@ -38,8 +40,10 @@ TABBED_GIT="https://git.suckless.org/tabbed"
 CHICAGO95_GIT="https://github.com/grassmunk/Chicago95"
 
 # AUR dependencies
-KPCLI_AUR="https://aur.archlinux.org/kpcli.git"
-BEAR_AUR="https://aur.archlinux.org/bear.git"
+YAY_AUR="https://aur.archlinux.org/yay.git"
+YAY_PROGRAMS="bear \
+              kpcli"
+    
 
 # Ungoogled chromium binary upstream and gpg keys
 UNGOOGLED_CHROMIUM_KEY="https://download.opensuse.org/repositories/home:/ungoogled_chromium/Arch/x86_64/home_ungoogled_chromium_Arch.key"
@@ -145,6 +149,9 @@ sudo_check
 install_pacman
 install_ungoogled_chromium
 
+# Install ueberzug
+sudo pip3 install ueberzug
+
 # Clone and build base wm repositories
 clone_and_build $DWM_GIT dwm
 clone_and_build $DMENU_GIT dmenu
@@ -153,7 +160,14 @@ clone_and_build $ST_GIT st
 # Clone and build vanilla suckless utilities
 clone_and_build $SURF_GIT surf
 clone_and_build $TABBED_GIT tabbed
-clone_and_makepkg $KPCLI_AUR kpcli
-clone_and_makepkg $BEAR_AUR bear
+
+# Install yay with all AUR programs requested
+clone_and_makepkg $YAY_AUR yay
+yay -S $YAY_PROGRAMS
+
+# Configure themes and stuff
 install_chicago95_theme
 configure
+
+# End message
+printf "\n${GREEN}Successfully riced your Arch linux installation\nRun 'startx' to start xorg${NO_COLOR}\n"

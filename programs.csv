@@ -15,18 +15,23 @@ mpv, Media player, pacman
 neofetch, Allows to view details about system every time bash is run, pacman
 nvim, Text editor, pacman
 pulseaudio, Controversial sound server that should just work, pacman
+python-pip, Package manager for python, pacman
 st, Terminal emulator, sadblog's git(https://git.sadblog.xyz/st)
 surf, Minimalist GUI browser for small tasks, suckless's git(https://git.suckless.org/surf)
 tabbed, Allows tabs for multiple programs using xorg, suckless's git(https://git.suckless.org/tabbed)
 texlive-most, Metapackage for LaTeX that contains all LaTeX packages available, pacman
 thunderbird, Easy to use email client, pacman
+ueberzug, Python program to display images in terminal, pip
 ungoogled-chromium, Main web-browser to be used, OpenSUSE repo(https://download.opensuse.org/repositories/home:/ungoogled_chromium/Arch/x86_64/)
 vifm, File manager with vim keybindings, pacman
 webkit2gtk, Web content engine for GTK (surf dependency), pacman
 xcompmgr, Allows transparency, pacman
+xorg-server, Main display server, pacman
 xorg-setxkbmap, Allows to toggle keyboard layouts between English (US) and Russian, pacman
+xorg-xinit, Allows to use startx in order to start xserver, pacman
 xorg-xrandr, Allows to change screen resolution and refresh rate, pacman
 xorg-xsetroot, Allows to set root window parameters for time and date, pacman
+yay, AUR package manager, AUR
 yt-dlp, Can be used to scrape videos from the internet, pacman
 zathura, PDF viewer that automatically changes the view when pdf is modified, pacman
 zathura-pdf-mupdf, Allows mupdf compatibility for zathura-pdf, pacman
