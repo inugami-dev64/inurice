@@ -39,6 +39,11 @@ CHICAGO95_GIT="https://github.com/grassmunk/Chicago95"
 UNGOOGLED_CHROMIUM_KEY="https://download.opensuse.org/repositories/home:/ungoogled_chromium/Arch/x86_64/home_ungoogled_chromium_Arch.key"
 UNGOOGLED_CHROMIUM_REPO="https://download.opensuse.org/repositories/home:/ungoogled_chromium/Arch/$arch"
 
+# Color definitions
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+NO_COLOR='\033[0m'
+
 
 # Check if sudo is available
 sudo_check() {
@@ -74,15 +79,31 @@ clone_and_makepkg() {
 }
 
 
+# Install all pacman programs
+install_pacman() {
+    printf "${YELLOW}Installing programs from pacman${NO_COLOR}\n"
+    sudo pacman -S $PACMAN_PROGRAMS
+}
+
+
 # Install ungoogled chromium from OpenSUSE upstream
 install_ungoogled_chromium() {
+    printf "${YELLOW}Installing ungoogled-chromium${NO_COLOR}\n"
+
+    # Create /etc/pacman.d/custom directory if it does not exist
+    if [ ! -d "/etc/pacman.d/custom" ]; then
+        sudo mkdir -p /etc/pacman.d/custom
+    fi
+
     curl -s $UNGOOGLED_CHROMIUM_KEY | sudo pacman-key -a -
-    echo '
-    [home_ungoogled_chromium_Arch]
-    SigLevel = Required TrustAll
-    Server = $UNGOOGLED_CHROMIUM_REPO' | sudo tee --append /etc/pacman.conf
+    printf "[home_ungoogled_chromium_Arch]\nSigLevel = Required TrustAll\nServer = ${UNGOOGLED_CHROMIUM_REPO}\n" | sudo tee /etc/pacman.d/custom/ungoogled-chromium.conf > /dev/null
     sudo pacman -Sy
     sudo pacman -S ungoogled-chromium
+
+    # Check if entry "Include = /etc/pacman.d/custom/*" exists
+    if [ -z "$(grep 'Include = /etc/pacman.d/custom/\*' /etc/pacman.conf)" ]; then
+        printf "# Inurice\nInclude = /etc/pacman.d/custom/*\n" | sudo tee --append /etc/pacman.conf > /dev/null
+    fi
 }
 
 
@@ -110,7 +131,8 @@ configure() {
 sudo_check
 
 # Install all pacman dependecies
-sudo pacman -S $PACMAN_PROGRAMS
+install_pacman
+install_ungoogled_chromium
 
 # Clone and build base wm repositories
 clone_and_build $DWM_GIT dwm
@@ -121,6 +143,5 @@ clone_and_build $ST_GIT st
 clone_and_build $SURF_GIT surf
 clone_and_build $TABBED_GIT tabbed
 clone_and_makepkg $KPCLI_AUR kpcli
-install_ungoogled_chromium
 install_chicago95_theme
 configure
