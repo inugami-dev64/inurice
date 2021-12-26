@@ -42,7 +42,8 @@ UNGOOGLED_CHROMIUM_REPO="https://download.opensuse.org/repositories/home:/ungoog
 
 # Check if sudo is available
 sudo_check() {
-    if [ ! -x sudo ]; then
+    if ! hash sudo 2>/dev/null
+    then
         printf "Sudo executable not found, please make sure that sudo is installed and your user is in sudoers file\n"
         exit
     fi
