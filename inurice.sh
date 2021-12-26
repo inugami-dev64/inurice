@@ -15,6 +15,7 @@ PACMAN_PROGRAMS="alsa-utils \
                  mpv \
                  neofetch \
                  neovim \
+                 pamixer \
                  pulseaudio \
                  python-pip \
                  texlive-most \
@@ -75,6 +76,20 @@ clone_and_build() {
     cd $2
     printf "Building $2...\n"
     make -j$CPUS
+    sudo make install
+    cd ..
+}
+
+
+# Special function to clone and build dwm
+clone_and_build_dwm() {
+    printf "${GREEN}Cloning and building dwm...${NO_COLOR}\n"
+    cd dwm
+    read -p "Please enter keepass database location (default: '~/Document/passwords.kdbx'): " PASSWORD_DB
+    [ -z "$PASSWORD_DB" ] && PASSWORD_DB="~/Document/passwords.kdbx"
+
+    # Build and install dwm
+    make PASSWORD_DB=${PASSWORD_DB} -j$CPUS
     sudo make install
     cd ..
 }
@@ -154,7 +169,7 @@ install_ungoogled_chromium
 sudo pip3 install ueberzug
 
 # Clone and build base wm repositories
-clone_and_build $DWM_GIT dwm
+clone_and_build_dwm
 clone_and_build $DMENU_GIT dmenu
 clone_and_build $ST_GIT st
 

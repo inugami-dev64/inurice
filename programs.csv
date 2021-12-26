@@ -14,6 +14,7 @@ kpcli, Commandline tool for managing keepass databases, AUR
 mpv, Media player, pacman
 neofetch, Allows to view details about system every time bash is run, pacman
 nvim, Text editor, pacman
+pamixer, Allows to set audio levels, pacman
 pulseaudio, Controversial sound server that should just work, pacman
 python-pip, Package manager for python, pacman
 st, Terminal emulator, sadblog's git(https://git.sadblog.xyz/st)
