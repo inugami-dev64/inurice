@@ -6,6 +6,7 @@ CPUS=4
 # Pacman dependencies
 PACMAN_PROGRAMS="alsa-utils \
                  base-devel \
+                 ctags \
                  clangd \
                  feh \
                  ffmpeg \
@@ -29,11 +30,14 @@ PACMAN_PROGRAMS="alsa-utils \
 DMENU_GIT="https://git.sadblog.xyz/dmenu"
 DOTFILES_GIT="https://git.sadblog.xyz/dotfiles"
 DWM_GIT="https://git.sadblog.xyz/dwm"
-KPCLI_AUR="https://aur.archlinux.org/kpcli.git"
 ST_GIT="https://git.sadblog.xyz/st"
 SURF_GIT="https://git.suckless.org/surf"
 TABBED_GIT="https://git.suckless.org/tabbed"
 CHICAGO95_GIT="https://github.com/grassmunk/Chicago95"
+
+# AUR dependencies
+KPCLI_AUR="https://aur.archlinux.org/kpcli.git"
+BEAR_AUR="https://aur.archlinux.org/bear.git"
 
 # Ungoogled chromium binary upstream and gpg keys
 UNGOOGLED_CHROMIUM_KEY="https://download.opensuse.org/repositories/home:/ungoogled_chromium/Arch/x86_64/home_ungoogled_chromium_Arch.key"
@@ -88,6 +92,7 @@ install_pacman() {
 
 # Install ungoogled chromium from OpenSUSE upstream
 install_ungoogled_chromium() {
+    UNGOOGLED_CHROMIUM_CONF="/etc/pacman.d/custom/ungoogled-chromium.conf"
     printf "${YELLOW}Installing ungoogled-chromium${NO_COLOR}\n"
 
     # Create /etc/pacman.d/custom directory if it does not exist
@@ -96,13 +101,14 @@ install_ungoogled_chromium() {
     fi
 
     curl -s $UNGOOGLED_CHROMIUM_KEY | sudo pacman-key -a -
-    printf "[home_ungoogled_chromium_Arch]\nSigLevel = Required TrustAll\nServer = ${UNGOOGLED_CHROMIUM_REPO}\n" | sudo tee /etc/pacman.d/custom/ungoogled-chromium.conf > /dev/null
+    printf "[home_ungoogled_chromium_Arch]\nSigLevel = Required TrustAll\nServer = ${UNGOOGLED_CHROMIUM_REPO}\n" | sudo tee $UNGOOGLED_CHROMIUM_CONF > /dev/null
     sudo pacman -Sy
     sudo pacman -S ungoogled-chromium
 
     # Check if entry "Include = /etc/pacman.d/custom/*" exists
-    if [ -z "$(grep 'Include = /etc/pacman.d/custom/\*' /etc/pacman.conf)" ]; then
-        printf "# Inurice\nInclude = /etc/pacman.d/custom/*\n" | sudo tee --append /etc/pacman.conf > /dev/null
+    GREP_OUTPUT=$(grep "Include = ${UNGOOGLED_CHROMIUM_CONF}" /etc/pacman.conf)
+    if [ -z "${GREP_OUTPUT}" ]; then
+        printf "# Inurice\nInclude = ${UNGOOGLED_CHROMIUM_CONF}\n" | sudo tee --append /etc/pacman.conf > /dev/null
     fi
 }
 
@@ -143,5 +149,6 @@ clone_and_build $ST_GIT st
 clone_and_build $SURF_GIT surf
 clone_and_build $TABBED_GIT tabbed
 clone_and_makepkg $KPCLI_AUR kpcli
+clone_and_makepkg $BEAR_AUR bear
 install_chicago95_theme
 configure

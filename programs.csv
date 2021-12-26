@@ -1,7 +1,9 @@
 Program name, Purpose, Installation source
 alsa-utils, Allows to set sound levels and other stuff, pacman
 base-devel, Metapackage containing all build tools, pacman
+bear, Tool to generate compilation database for clangd, AUR
 clangd, Allows neovim to have LSP for C++ language, pacman
+ctags, Allows to create a index file of language objects found in source files, pacman
 dmenu, Simple menu for searching executing programs in WM, sadblog's git(https://git.sadblog.xyz/dmenu)
 dwm, Base window manager for Inurice, sadblog's git(https://git.sadblog.xyz/dwm)
 feh, Image viewer and wallpaper setting utility, pacman
