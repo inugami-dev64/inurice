@@ -21,6 +21,7 @@ PACMAN_PROGRAMS="alsa-utils \
                  thunderbird \
                  vifm \
                  webkit2gtk \
+                 xfce4-screenshooter \
                  xcompmgr \
                  xorg-xinit \
                  xorg-setxkbmap \

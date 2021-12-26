@@ -25,6 +25,7 @@ ueberzug, Python program to display images in terminal, pip
 ungoogled-chromium, Main web-browser to be used, OpenSUSE repo(https://download.opensuse.org/repositories/home:/ungoogled_chromium/Arch/x86_64/)
 vifm, File manager with vim keybindings, pacman
 webkit2gtk, Web content engine for GTK (surf dependency), pacman
+xfce4-screenshooter, Screenshot utility for xfce4, pacman
 xcompmgr, Allows transparency, pacman
 xorg-server, Main display server, pacman
 xorg-setxkbmap, Allows to toggle keyboard layouts between English (US) and Russian, pacman
