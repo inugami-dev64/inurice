@@ -10,6 +10,7 @@ feh, Image viewer and wallpaper setting utility, pacman
 ffmpeg, Record and convert video or audio files from command line, pacman
 gcr, Dependency for surf, pacman
 git, Version control software needed for installation, pacman
+htop, CLI task manager, pacman 
 kpcli, Commandline tool for managing keepass databases, AUR
 mpv, Media player, pacman
 neofetch, Allows to view details about system every time bash is run, pacman

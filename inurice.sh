@@ -12,6 +12,7 @@ PACMAN_PROGRAMS="alsa-utils \
                  ffmpeg \
                  gcr \
                  git \
+                 htop \
                  mpv \
                  neofetch \
                  neovim \
