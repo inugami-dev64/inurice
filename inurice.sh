@@ -84,6 +84,7 @@ clone_and_build() {
 # Special function to clone and build dwm
 clone_and_build_dwm() {
     printf "${GREEN}Cloning and building dwm...${NO_COLOR}\n"
+    git clone $DWM_GIT dwm
     cd dwm
     read -p "Please enter keepass database location (default: '~/Document/passwords.kdbx'): " PASSWORD_DB
     [ -z "$PASSWORD_DB" ] && PASSWORD_DB="~/Document/passwords.kdbx"
