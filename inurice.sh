@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # How many cpu threads to use for compilation
-CPUS=4
+[ -z "$CPUS" ] && CPUS=4
 
 # Pacman dependencies
 PACMAN_PROGRAMS="alsa-utils \
