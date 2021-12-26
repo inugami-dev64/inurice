@@ -7,13 +7,13 @@ CPUS=4
 PACMAN_PROGRAMS="alsa-utils \
                  base-devel \
                  ctags \
-                 clangd \
+                 clang \
                  feh \
                  ffmpeg \
                  git \
                  mpv \
                  neofetch \
-                 nvim \
+                 neovim \
                  pulseaudio \
                  texlive-most \
                  thunderbird \
