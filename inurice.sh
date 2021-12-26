@@ -19,7 +19,7 @@ PACMAN_PROGRAMS="alsa-utils \
                  texlive-most \
                  thunderbird \
                  vifm \
-                 webkit2gtk-4.1 \
+                 webkit2gtk \
                  xcompmgr \
                  xorg-setxkbmap \
                  xorg-xrandr \

@@ -22,7 +22,7 @@ texlive-most, Metapackage for LaTeX that contains all LaTeX packages available, 
 thunderbird, Easy to use email client, pacman
 ungoogled-chromium, Main web-browser to be used, OpenSUSE repo(https://download.opensuse.org/repositories/home:/ungoogled_chromium/Arch/x86_64/)
 vifm, File manager with vim keybindings, pacman
-webkit2gtk-4.1, Web content engine for GTK (surf dependency), pacman
+webkit2gtk, Web content engine for GTK (surf dependency), pacman
 xcompmgr, Allows transparency, pacman
 xorg-setxkbmap, Allows to toggle keyboard layouts between English (US) and Russian, pacman
 xorg-xrandr, Allows to change screen resolution and refresh rate, pacman
