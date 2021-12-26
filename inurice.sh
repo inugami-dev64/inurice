@@ -41,7 +41,7 @@ BEAR_AUR="https://aur.archlinux.org/bear.git"
 
 # Ungoogled chromium binary upstream and gpg keys
 UNGOOGLED_CHROMIUM_KEY="https://download.opensuse.org/repositories/home:/ungoogled_chromium/Arch/x86_64/home_ungoogled_chromium_Arch.key"
-UNGOOGLED_CHROMIUM_REPO="https://download.opensuse.org/repositories/home:/ungoogled_chromium/Arch/$arch"
+UNGOOGLED_CHROMIUM_REPO='https://download.opensuse.org/repositories/home:/ungoogled_chromium/Arch/$arch'
 
 # Color definitions
 GREEN='\033[1;32m'
