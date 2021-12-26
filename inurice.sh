@@ -102,14 +102,15 @@ install_ungoogled_chromium() {
 
     curl -s $UNGOOGLED_CHROMIUM_KEY | sudo pacman-key -a -
     printf "[home_ungoogled_chromium_Arch]\nSigLevel = Required TrustAll\nServer = ${UNGOOGLED_CHROMIUM_REPO}\n" | sudo tee $UNGOOGLED_CHROMIUM_CONF > /dev/null
-    sudo pacman -Sy
-    sudo pacman -S ungoogled-chromium
 
     # Check if entry "Include = /etc/pacman.d/custom/*" exists
     GREP_OUTPUT=$(grep "Include = ${UNGOOGLED_CHROMIUM_CONF}" /etc/pacman.conf)
     if [ -z "${GREP_OUTPUT}" ]; then
         printf "# Inurice\nInclude = ${UNGOOGLED_CHROMIUM_CONF}\n" | sudo tee --append /etc/pacman.conf > /dev/null
     fi
+
+    sudo pacman -Sy
+    sudo pacman -S ungoogled-chromium
 }
 
 
