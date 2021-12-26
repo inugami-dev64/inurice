@@ -65,6 +65,7 @@ sudo_check() {
 # Argument $1 specifies the remote repository's url
 # Argument $2 specifies the local clone directory
 clone_and_build() {
+    printf "${GREEN}Cloning and building $2...${NO_COLOR}\n"
     git clone $1 $2
     cd $2
     printf "Building $2...\n"
@@ -78,7 +79,8 @@ clone_and_build() {
 # Argument $1 specifies the remote repository's url
 # Argument $2 specifies the local clone directory
 clone_and_makepkg() {
-    printf "Building $2...\n"
+    printf "${GREEN}Cloning and makepkg $2...${NO_COLOR}\n"
+    cd $2
     git clone $1 $2
     makepkg -si
     cd ..
