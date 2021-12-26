@@ -3,7 +3,7 @@
 ![](res/inuyasha.png)
 
 
-This script allows to easily reproduce dwm configuration that I use on any Arch linux based distribution. 
+This script allows you to easily reproduce my dwm configuration on Arch based distributions. 
 In order to get started make sure that you have working internet connection and all graphics driver related
 issues are resolved, especially if you are using any NVIDIA cards. Also make sure that sudo is installed and 
 your user is already a sudoer. Otherwise the script will simply fail.
@@ -11,7 +11,7 @@ your user is already a sudoer. Otherwise the script will simply fail.
 
 ## Getting started
 
-In order to start ricing Arch Linux build you can fetch the script directly from its website and run it:  
+In order to start ricing your Arch Linux installation you can fetch the script directly from its website and run it:  
 ```  
 $ curl -LO https://inurice.de/inurice.sh
 $ chmod a+x inurice.sh
