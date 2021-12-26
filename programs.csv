@@ -13,7 +13,7 @@ kpcli, Commandline tool for managing keepass databases, AUR
 mpv, Media player, pacman
 neofetch, Allows to view details about system every time bash is run, pacman
 nvim, Text editor, pacman
-pulseaudio, Contriversial sound server that should just work, pacman
+pulseaudio, Controversial sound server that should just work, pacman
 st, Terminal emulator, sadblog's git(https://git.sadblog.xyz/st)
 surf, Minimalist GUI browser for small tasks, suckless's git(https://git.suckless.org/surf)
 tabbed, Allows tabs for multiple programs using xorg, suckless's git(https://git.suckless.org/tabbed)
