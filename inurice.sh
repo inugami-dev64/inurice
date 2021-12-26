@@ -10,6 +10,7 @@ PACMAN_PROGRAMS="alsa-utils \
                  clang \
                  feh \
                  ffmpeg \
+                 gcr \
                  git \
                  mpv \
                  neofetch \
@@ -18,6 +19,7 @@ PACMAN_PROGRAMS="alsa-utils \
                  texlive-most \
                  thunderbird \
                  vifm \
+                 webkit2gtk-4.1 \
                  xcompmgr \
                  xorg-setxkbmap \
                  xorg-xrandr \
