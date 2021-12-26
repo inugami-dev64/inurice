@@ -1,6 +1,7 @@
 Program name, Purpose, Installation source
 alsa-utils, Allows to set sound levels and other stuff, pacman
 base-devel, Metapackage containing all build tools, pacman
+clangd, Allows neovim to have LSP for C++ language, pacman
 dmenu, Simple menu for searching executing programs in WM, sadblog's git(https://git.sadblog.xyz/dmenu)
 dwm, Base window manager for Inurice, sadblog's git(https://git.sadblog.xyz/dwm)
 feh, Image viewer and wallpaper setting utility, pacman
@@ -8,6 +9,7 @@ ffmpeg, Record and convert video or audio files from command line, pacman
 git, Version control software needed for installation, pacman
 kpcli, Commandline tool for managing keepass databases, AUR
 mpv, Media player, pacman
+neofetch, Allows to view details about system every time bash is run, pacman
 nvim, Text editor, pacman
 pulseaudio, Contriversial sound server that should just work, pacman
 st, Terminal emulator, sadblog's git(https://git.sadblog.xyz/st)

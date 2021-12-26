@@ -6,10 +6,12 @@ CPUS=4
 # Pacman dependencies
 PACMAN_PROGRAMS="alsa-utils \
                  base-devel \
+                 clangd \
                  feh \
                  ffmpeg \
                  git \
                  mpv \
+                 neofetch \
                  nvim \
                  pulseaudio \
                  texlive-most \
@@ -56,6 +58,7 @@ clone_and_build() {
     printf "Building $2...\n"
     make -j$CPUS
     sudo make install
+    cd ..
 }
 
 
@@ -66,6 +69,7 @@ clone_and_makepkg() {
     printf "Building $2...\n"
     git clone $1 $2
     makepkg -si
+    cd ..
 }
 
 
@@ -88,6 +92,7 @@ install_chicago95_theme() {
     cd chicago95
     sudo cp -r Icons/Chicago95 /usr/share/icons
     sudo cp -r Theme/Chicago95 /usr/share/themes
+    cd ..
 }
 
 
@@ -97,6 +102,7 @@ configure() {
     cd dotfiles
     chmod a+x bootstrap.sh
     ./bootstrap.sh
+    cd ..
 }
 
 
