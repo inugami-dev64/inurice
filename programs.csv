@@ -12,6 +12,7 @@ gcr, Dependency for surf, pacman
 git, Version control software needed for installation, pacman
 htop, CLI task manager, pacman 
 kpcli, Commandline tool for managing keepass databases, AUR
+man, Pager for viewing manuals, pacman
 mpv, Media player, pacman
 neofetch, Allows to view details about system every time bash is run, pacman
 nvim, Text editor, pacman

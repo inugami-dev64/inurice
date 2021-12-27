@@ -13,6 +13,7 @@ PACMAN_PROGRAMS="alsa-utils \
                  gcr \
                  git \
                  htop \
+                 man \
                  mpv \
                  neofetch \
                  neovim \
