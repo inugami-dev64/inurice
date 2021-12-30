@@ -6,6 +6,7 @@
 # Pacman dependencies
 PACMAN_PROGRAMS="alsa-utils \
                  base-devel \
+                 biber \
                  ctags \
                  clang \
                  feh \
